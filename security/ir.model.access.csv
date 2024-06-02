@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attestation_ger,attestation.gerent,gestion_formation.model_formation_attestation,group_gerant,1,1,1,1
+access_attestation_sec,attestation.secretaire,gestion_formation.model_formation_attestation,group_secretaire,1,0,0,0

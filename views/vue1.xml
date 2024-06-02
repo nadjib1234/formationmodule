@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data> 
+		<record model="ir.actions.act_window" id="attestationwizard_action">
+
+                      <field name="name">Attestationwizar</field>
+                      <field name="res_model">formation.wizarattestation</field>
+                      <field name="view_mode">form</field>
+                      <field name="view type">form</field>
+                      <field name="target">new</field>
+
+		</record>
+		<record model="ir.ui.view" id="formation_list_view">
+			<field name="name">fomation list view</field>
+			<field name="model">formation.formation</field>
+			<field name="arch" type="xml">
+				<tree> 
+					<field name="name"/>
+					<field name="nprix"/>
+				</tree>
+
+			</field>
+
+		</record>
+		<record model="ir.ui.view" id="formation_list_view2">
+			<field name="name">fomation list view</field>
+			<field name="model">formation.formation</field>
+			<field name="arch" type="xml">
+
+				<form>
+					<sheet>
+						<group>
+						<group>
+					<field name="name"/>
+					<field name="nprix"/>
+					</group>
+					<group>
+					</group>
+				</group>
+				</sheet>
+				</form>
+			</field>
+
+		</record>
+			<record model="ir.ui.view" id="session_list_view">
+			<field name="name">session list view</field>
+			<field name="model">formation.session</field>
+			<field name="arch" type="xml">
+				<tree> 
+					<field name="name"/>
+					<field name="nb_participant"/>
+					<field name="date_debut"/>
+					<field name="date_fin"/>
+					<field name="duree"/>
+					<field name="state"/>
+					<field name="formation_id"/>
+				</tree>
+
+			</field>
+
+		</record>
+			<record model="ir.ui.view" id="session_list_view2">
+			<field name="name">session list view</field>
+			<field name="model">formation.session</field>
+			<field name="arch" type="xml">
+				<form>
+				<header>
+				<button name="%(attestationwizard_action)d" type='action' string="Cree attestation"/>	
+				</header>
+				<sheet> 
+					<group>
+						<group>
+					<field name="name"/>
+					<field name="nb_participant"/></group>
+					<group>
+					<field name="date_debut"/>
+					<field name="date_fin"/>
+				</group>
+				<group>
+					<field name="duree"/>
+					<field name="state"/>
+	<field name="formation_id"/>
+				</group>
+</group>
+<h1>formateurs</h1>
+
+<field name="formateur_ids"/>
+<h1>salle</h1>
+<field name="salle_ids"/>
+<h1>candidat_ids</h1>
+<field name="candidat_ids"/>
+				</sheet>
+				</form>
+				
+
+			</field>
+
+		</record>
+			<record model="ir.ui.view" id="formateur_list_view">
+			<field name="name">formateur list view</field>
+			<field name="model">formation.formateur</field>
+			<field name="arch" type="xml">
+				<tree> 
+					<field name="name"/>
+					<field name="matricule"/>
+					<field name="diplome"/>
+				</tree>
+				
+
+			</field>
+
+		</record>
+			<record model="ir.ui.view" id="formateur_list_view2">
+			<field name="name">formateur list view</field>
+			<field name="model">formation.formateur</field>
+			<field name="arch" type="xml">
+				<form> 
+					<sheet>
+			         <group>
+					<field name="name"/>
+					<field name="matricule"/>
+					<field name="diplome"/></group>
+				</sheet>
+				</form>
+			</field>
+		</record>
+			<record model="ir.ui.view" id="salle_list_view">
+			<field name="name">salle list view</field>
+			<field name="model">formation.salle</field>
+			<field name="arch" type="xml">
+				<form> 
+					<field name="name"/>
+					<field name="libre"/>
+					<field name="nb_place"/>
+				</form>
+			</field>
+		</record>
+	<record model="ir.ui.view" id="salle_list_view2">
+			<field name="name">salle list view</field>
+			<field name="model">formation.salle</field>
+			<field name="arch" type="xml">
+				<tree> 
+					<field name="name"/>
+					<field name="libre"/>
+					<field name="nb_place"/>
+				</tree>
+			</field>
+		</record>
+			<record model="ir.ui.view" id="candidat_list_view">
+			<field name="name">candidat list view</field>
+			<field name="model">formation.candidat</field>
+			<field name="arch" type="xml">
+				<tree> 
+					<field name="name"/>
+					<field name="num_ins"/>
+					
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="candidat_list_view2">
+			<field name="name">candidat list view</field>
+			<field name="model">formation.candidat</field>
+			<field name="arch" type="xml">
+				<form> 
+					<field name="name"/>
+					<field name="num_ins"/>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="attestation_list_view">
+			<field name="name">attestation list view</field>
+			<field name="model">formation.attestation</field>
+			<field name="arch" type="xml">
+				<tree> 
+					<field name="date"/>
+					<field name="description"/>
+					
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="attestation_list_view2">
+			<field name="name">attestation list view</field>
+			<field name="model">formation.attestation</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="date"/>
+								<field name="description"/>
+							</group>
+						</group>
+						<h1>condidat</h1>
+						<field name="candidat_ids"/>
+						<h1>formation</h1>
+						<field name="formation_id"/>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="attestationwizard_list_view2">
+			<field name="name">attestationwizard list view</field>
+			<field name="model">formation.wizarattestation</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="date"/>
+								<field name="description"/>
+							</group>
+						</group>
+						<h1>condidat</h1>
+						<field name="candidat_ids"/>
+					</sheet>
+					<footer>
+						<button name="action_done" string="confirmer" type="object" class="on_highlight"/>
+	                    ou
+	                    <button string="annuler" class="on_link" special="cancel"/> 
+
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="formation_action">
+
+                      <field name="name">Formation</field>
+                      <field name="res_model">formation.formation</field>
+                      <field name="view_mode">kanban,tree,form</field>
+                      <field name="view type">form</field>
+
+		</record>
+		<record model="ir.actions.act_window" id="session_action">
+
+                      <field name="name">Session</field>
+                      <field name="res_model">formation.session</field>
+                      <field name="view_mode">kanban,tree,form</field>
+                      <field name="view type">form</field>
+
+		</record>
+		<record model="ir.actions.act_window" id="formateur_action">
+
+                      <field name="name">Formateur</field>
+                      <field name="res_model">formation.formateur</field>
+                      <field name="view_mode">kanban,tree,form</field>
+                      <field name="view type">form</field>
+
+		</record>
+		<record model="ir.actions.act_window" id="salle_action">
+
+                      <field name="name">Salle</field>
+                      <field name="res_model">formation.salle</field>
+                      <field name="view_mode">kanban,tree,form</field>
+                      <field name="view type">form</field>
+
+		</record>
+		<record model="ir.actions.act_window" id="candidat_action">
+
+                      <field name="name">Candidat</field>
+                      <field name="res_model">formation.candidat</field>
+                      <field name="view_mode">kanban,tree,form</field>
+                      <field name="view type">form</field>
+
+		</record>
+		<record model="ir.actions.act_window" id="attestation_action">
+
+                      <field name="name">Attestation</field>
+                      <field name="res_model">formation.attestation</field>
+                      <field name="view_mode">tree,form</field>
+                      <field name="view type">form</field>
+
+		</record>
+		
+		<menuitem id="gestion_formation" name="Gestion de formation"/>
+		<menuitem id="formation_formation" name="Formations" parent="gestion_formation" action="formation_action"/>
+		<menuitem id="formation_session" name="Session" parent="gestion_formation" action="session_action"/>
+		<menuitem id="formation_formateur" name="Formateurs" parent="gestion_formation" action="formateur_action"/>
+		<menuitem id="formation_salle" name="Salle" parent="gestion_formation" action="salle_action"/>
+		<menuitem id="formation_candidat" name="Candidat" parent="gestion_formation" action="candidat_action"/>
+		<menuitem id="formation_attestation" name="attestation" parent="gestion_formation" action="attestation_action"/>
+	</data>
+</odoo>
